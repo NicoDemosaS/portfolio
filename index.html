@@ -11,23 +11,47 @@
             <nav class="sub-cabecalho">
                 <a href="index.html" class="ancora-cabecalho">Home</a>
                 <a href="about.html" class="ancora-cabecalho">Sobre mim</a>
-                <a href="projetos.html" class="ancora-cabecalho">Meus Projetos</a>
+                <!-- <a href="projetos.html" class="ancora-cabecalho">Meus Projetos</a> -->
             </nav>
         </header>
-        <main class="apresentacao">
-            <section class="apresentacao__conteudo">
-                <div class="titulo-apresentacao">
-                    <h1 class="titulo_titulo">Eleve seu negócio digital a outro nível<strong class="titulo-destaque"> com uma Aplicaçao de qualidade!</strong></h1>
-                    <p class="texto">Olá! Sou Nicolas Gabriel, desenvolvedor Back-End com especialidade em Python, Flask e Django. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
-                </div>
-                <div class="botoes">
-                    <h2 class="titulo-dos-botoes"> Acesse minhas redes</h2>
-                    <a class="sub-botoes" href="https://www.instagram.com/demosagaab/"><img src="./assets/instagram.png" class="icone">Instagram</a>
-                    <a class="sub-botoes" href="https://www.linkedin.com/in/nicolas-gabriel-brunismann-a888b3255/"><img src="./assets/linkedin.png" class="icone">Linkedin</a>
-                   <a class="sub-botoes" href="https://github.com/NicoDemosaS"><img src="./assets/github.png" class="icone">Github</a>
-                </div>
-            </section>
-            <img src="./assets/picture.jpg" alt="foto em pixel art" class="imagem">
+        <main class="main-flex">
+            <div class="apresentacao">
+                <section class="apresentacao__conteudo">
+                    <div class="titulo-apresentacao">
+                        <h1 class="titulo_titulo">Eleve seu negócio digital a outro nível<strong class="titulo-destaque"> com uma Aplicaçao de qualidade!</strong></h1>
+                        <p class="texto">Olá! Sou Nicolas Gabriel, desenvolvedor Back-End com especialidade em Python, Flask e Django. Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
+                    </div>
+                    <div class="botoes">
+                        <h2 class="titulo-dos-botoes"> Acesse minhas redes</h2>
+                        <a class="sub-botoes" href="https://www.instagram.com/demosagaab/"><img src="./assets/instagram.png" class="icone">Instagram</a>
+                        <a class="sub-botoes" href="https://www.linkedin.com/in/nicolas-gabriel-brunismann-a888b3255/"><img src="./assets/linkedin.png" class="icone">Linkedin</a>
+                        <a class="sub-botoes" href="https://github.com/NicoDemosaS"><img src="./assets/github.png" class="icone">Github</a>
+                    </div>
+                </section>
+                <img src="./assets/picture.jpg" alt="foto em pixel art" class="imagem">
+            </div>
+            <div>
+                <section class="projetos">
+                    <h1 class="projetos-titulo">Meus Projetos</h1>
+                    <!-- Novo: Criado um grid para os projetos -->
+                    <div class="projetos-grid">
+                        <div class="projeto-card">
+                            <h3>Alura - Space</h3>
+                            <p>Alura Space é um projeto ainda em desenvolvimento, feito com auxilio da Alura, utilizando o framework Django.</p>
+                            <a href="https://github.com/NicoDemosaS/alura_space" class="projeto-botao">Ver Projeto</a>
+                        </div>
+                        <div class="projeto-card">
+                            <h3>Notificador de Dívidas</h3>
+                            <p>O Notificador de Dividas é um software que utiliza SQLite e Selenium para gerenciar registros de dívidas, nomes e números de telefone de clientes. Ele permite o envio automático de mensagens para informar os clientes sobre suas dívidas.</p>
+                            <a href="https://github.com/NicoDemosaS/notificador-de-dividas" class="projeto-botao">Ver Projeto</a>
+                        </div>
+                        <div class="projeto-card">
+                            <h3>Jogo da Forca</h3>
+                            <p>Este é um pequeno jogo ainda nao completo feito em Python, foi utilizado para praticar o desenvolvimento de software com Python.</p>
+                            <a href="https://github.com/NicoDemosaS/Jogo-da-FORCA" class="projeto-botao">Ver Projeto</a>
+                        </div>
+                    </div>
+                </section>
         </main>
         <footer class="rodape">
             <p>Desenvolvido por Gabriel</p>

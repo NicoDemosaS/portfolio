@@ -25,8 +25,6 @@
     background-color: var(--cor-cabecalho);
 }
 
-
-
 .sub-cabecalho{
     display: flex;
     gap: 80px;
@@ -126,6 +124,7 @@ a {
 
 .about-imagem {
     width: 50%;
+    padding-left: 6%;
 }
 
 .sub-botoes:hover {
@@ -137,6 +136,113 @@ a {
     padding-bottom: 3%;
 }
 
+.projetos-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-terciaria);
+}
+
+/* Modificado: Ajustado o layout da seção de projetos */
+.projetos {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Novo: Estilo para o título da seção de projetos */
+.projetos-titulo {
+    color: var(--cor-terciaria);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Novo: Grid para organizar os cards de projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Novo: Estilo para cada card de projeto */
+.projeto-card {
+    background-color: var(--cor-cabecalho);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+/* Novo: Efeito hover para os cards */
+.projeto-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Novo: Estilo para o título do projeto dentro do card */
+.projeto-card h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+/* Novo: Estilo para o parágrafo do projeto dentro do card */
+.projeto-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* Novo: Estilo para o botão de cada projeto */
+.projeto-botao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* Novo: Efeito hover para o botão do projeto */
+.projeto-botao:hover {
+    background-color: var(--cor-hover);
+}
+
+/* Modificado: Ajustes para telas menores */
+@media (max-width: 768px) {
+    .projetos {
+        padding: 5% 5%;
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr; /* Muda para uma coluna em telas menores */
+    }
+}
+
+.projetos-apresentacao {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.projetos-apresentacao-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.projetos-imagem {
+    width: 540px;
+    height: auto;
+}
+
 .rodape{
     padding: 1%;
     display: flex;
@@ -144,26 +250,13 @@ a {
     background-color: var(--cor-cabecalho) /* cor cabecalho / rodape */
 }
 
-.projetos {
-    display: flex;
-    justify-content: space-between;
-}
 
-.apresentacao-projetos {
-    box-sizing: border-box;
-    width: 30%;
-    padding: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 0.3rem;
-}
 
 @media (max-width: 1200px){
     .cabecalho {
         padding: 10%;
     }
+
     .sub-cabecalho{
         justify-content: center;
     }
@@ -184,4 +277,5 @@ a {
     .apresentacao__conteudo{
         width: auto;
     }
+}
 }
