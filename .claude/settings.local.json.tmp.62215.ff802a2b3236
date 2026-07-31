@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"index.html -> %{http_code}\\\\n\" \"http://localhost:8000/index.html\")",
+      "Bash(curl -s -o /dev/null -w \"support.js -> %{http_code}\\\\n\" \"http://localhost:8000/support.js\")",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(ls -la ~/.ssh/*.pub)",
+      "Bash(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -T git@github.com)",
+      "Bash(curl -s -o /dev/null -w \"local index -> %{http_code}\\\\n\" \"http://localhost:8000/index.html\")",
+      "Bash(git commit *)"
+    ]
+  }
+}

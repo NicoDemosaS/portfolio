@@ -14,9 +14,10 @@
 <meta property="og:description" content="Eu construo coisas — e as protejo. Segurança + desenvolvimento + infraestrutura." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%232A211A'/%3E%3Ctext%20x='16'%20y='23'%20font-size='20'%20fill='%23C9A96E'%20text-anchor='middle'%20font-family='serif'%3E%E2%97%86%3C/text%3E%3C/svg%3E" />
 <style>
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #F6F1E7; color: #2A211A; font-family: 'Karla', sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #F6F1E7; color: #2A211A; font-family: 'Karla', sans-serif; -webkit-font-smoothing: antialiased; zoom: 1.3; }
 a { color: #A9563A; text-decoration-color: #C9A96E; text-underline-offset: 3px; }
 a:hover { color: #C9A96E; }
 ::selection { background: #C9A96E; color: #2A211A; }
@@ -25,7 +26,7 @@ a:hover { color: #C9A96E; }
 <div style="min-height: 100vh; background: #F6F1E7;">
   <div style="height: 6px; background: repeating-linear-gradient(90deg, #A9563A 0 18px, #C9A96E 18px 26px, #2A211A 26px 30px, #C9A96E 30px 38px);"></div>
   <header style="position: sticky; top: 0; z-index: 50; background: rgba(246,241,231,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E0D5C2;">
-    <div style="max-width: 1040px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
       <a href="#topo" style="font-family: 'Gloock', serif; font-size: 20px; color: #2A211A; text-decoration: none; letter-spacing: 0.02em;">N<span style="color: #C9A96E;">◆</span>B</a>
       <nav style="display: flex; gap: 18px; flex-wrap: wrap; margin-left: auto; font-size: 14px; letter-spacing: 0.04em;">
         <a href="#sobre" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navAbout }}</a>
@@ -43,8 +44,8 @@ a:hover { color: #C9A96E; }
     </div>
   </header>
 
-  <section id="topo" style="padding: 88px 24px 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="topo" style="padding: 88px 16px 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <p style="margin: 0 0 20px 0; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #A9563A;">Medianeira · Paraná — Brasil</p>
       <h1 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(42px, 8.5vw, 92px); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance;">Nicolas Gabriel<br />Brunismann</h1>
       <p style="margin: 28px 0 0 0; font-family: 'Gloock', serif; font-size: clamp(22px, 3.4vw, 34px); color: #A9563A; line-height: 1.25; max-width: 22ch;">{{ t.heroLine }}</p>
@@ -64,8 +65,8 @@ a:hover { color: #C9A96E; }
 
   <div style="text-align: center; color: #C9A96E; font-size: 12px; letter-spacing: 14px; padding: 8px 0;">◆◇◆</div>
 
-  <section id="sobre" style="padding: 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+  <section id="sobre" style="padding: 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
       <div>
         <div style="display: flex; align-items: baseline; gap: 14px;">
           <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">01</span>
@@ -87,8 +88,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="experiencia" style="padding: 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="experiencia" style="padding: 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <div style="display: flex; align-items: baseline; gap: 14px;">
         <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">02</span>
         <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.expTitle }}</h2>
@@ -113,8 +114,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="projetos" style="padding: 64px 24px; background: #EFE7D8; border-top: 1px solid #E0D5C2; border-bottom: 1px solid #E0D5C2;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="projetos" style="padding: 64px 16px; background: #EFE7D8; border-top: 1px solid #E0D5C2; border-bottom: 1px solid #E0D5C2;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <div style="display: flex; align-items: baseline; gap: 14px;">
         <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">03</span>
         <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.projTitle }}</h2>
@@ -135,8 +136,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="seguranca" style="padding: 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="seguranca" style="padding: 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <div style="display: flex; align-items: baseline; gap: 14px;">
         <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">04</span>
         <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.secTitle }}</h2>
@@ -149,7 +150,7 @@ a:hover { color: #C9A96E; }
       </div>
       <div style="display: grid; gap: 14px; margin-top: 32px;">
         <sc-for list="{{ findings }}" as="v" hint-placeholder-count="6">
-          <article style="background: #FDFBF5; border: 1px solid #E0D5C2; padding: 22px 24px; display: grid; gap: 12px;">
+          <article style="background: #FDFBF5; border: 1px solid #E0D5C2; padding: 22px 16px; display: grid; gap: 12px;">
             <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline;">
               <span style="font-family: 'Gloock', serif; font-size: 15px; color: #C9A96E; min-width: 34px;">{{ v.num }}</span>
               <h3 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: 20px; flex: 1; min-width: 240px;">{{ v.title }}</h3>
@@ -166,8 +167,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="conquistas" style="padding: 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="conquistas" style="padding: 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <div style="display: flex; align-items: baseline; gap: 14px;">
         <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">05</span>
         <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.achTitle }}</h2>
@@ -198,8 +199,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="skills" style="padding: 64px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
+  <section id="skills" style="padding: 64px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto;">
       <div style="display: flex; align-items: baseline; gap: 14px;">
         <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">06</span>
         <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">Skills</h2>
@@ -219,7 +220,7 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <section id="contato" style="padding: 88px 24px; text-align: center;">
+  <section id="contato" style="padding: 88px 16px; text-align: center;">
     <div style="max-width: 720px; margin: 0 auto;">
       <div style="color: #C9A96E; font-size: 12px; letter-spacing: 14px; margin-bottom: 24px;">◆◇◆</div>
       <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(32px, 5.5vw, 52px); text-wrap: balance;">{{ t.contactTitle }}</h2>
@@ -230,8 +231,8 @@ a:hover { color: #C9A96E; }
     </div>
   </section>
 
-  <footer style="background: #2A211A; color: #F6F1E7; padding: 36px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between;">
+  <footer style="background: #2A211A; color: #F6F1E7; padding: 36px 16px;">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between;">
       <p style="margin: 0; font-family: 'Gloock', serif; font-size: 17px;">Nicolas Gabriel Brunismann <span style="color: #C9A96E;">◆</span> <span style="font-family: 'Karla', sans-serif; font-size: 13px; color: #B7A891;">{{ t.footerNote }}</span></p>
       <div style="display: flex; gap: 20px; font-size: 14px;">
         <a href="https://github.com/NicoDemosaS" target="_blank" rel="noopener" style="color: #C9A96E;">GitHub</a>
