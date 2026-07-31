@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Nicolas Gabriel Brunismann — Segurança, Dev &amp; Infra</title>
+<meta name="description" content="Portfólio de Nicolas Gabriel Brunismann — estudante de Ciência da Computação (UTFPR Medianeira), segurança, desenvolvimento e infraestrutura. Fundador do ARAPUCA." />
+<meta property="og:title" content="Nicolas Gabriel Brunismann" />
+<meta property="og:description" content="Eu construo coisas — e as protejo. Segurança + desenvolvimento + infraestrutura." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F6F1E7; color: #2A211A; font-family: 'Karla', sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #A9563A; text-decoration-color: #C9A96E; text-underline-offset: 3px; }
+a:hover { color: #C9A96E; }
+::selection { background: #C9A96E; color: #2A211A; }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F6F1E7;">
+  <div style="height: 6px; background: repeating-linear-gradient(90deg, #A9563A 0 18px, #C9A96E 18px 26px, #2A211A 26px 30px, #C9A96E 30px 38px);"></div>
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(246,241,231,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E0D5C2;">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <a href="#topo" style="font-family: 'Gloock', serif; font-size: 20px; color: #2A211A; text-decoration: none; letter-spacing: 0.02em;">N<span style="color: #C9A96E;">◆</span>B</a>
+      <nav style="display: flex; gap: 18px; flex-wrap: wrap; margin-left: auto; font-size: 14px; letter-spacing: 0.04em;">
+        <a href="#sobre" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navAbout }}</a>
+        <a href="#experiencia" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navExp }}</a>
+        <a href="#projetos" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navProjects }}</a>
+        <a href="#seguranca" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navSecurity }}</a>
+        <a href="#conquistas" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navAchievements }}</a>
+        <a href="#skills" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">Skills</a>
+        <a href="#contato" style="color: #6E5F51; text-decoration: none;" style-hover="color: #A9563A;">{{ t.navContact }}</a>
+      </nav>
+      <div style="display: flex; border: 1px solid #C9A96E; border-radius: 999px; overflow: hidden; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;">
+        <button onClick="{{ setPT }}" style="{{ ptBtnStyle }}">PT</button>
+        <button onClick="{{ setEN }}" style="{{ enBtnStyle }}">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="topo" style="padding: 88px 24px 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <p style="margin: 0 0 20px 0; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #A9563A;">Medianeira · Paraná — Brasil</p>
+      <h1 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(42px, 8.5vw, 92px); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance;">Nicolas Gabriel<br />Brunismann</h1>
+      <p style="margin: 28px 0 0 0; font-family: 'Gloock', serif; font-size: clamp(22px, 3.4vw, 34px); color: #A9563A; line-height: 1.25; max-width: 22ch;">{{ t.heroLine }}</p>
+      <p style="margin: 20px 0 0 0; font-size: 17px; line-height: 1.6; color: #6E5F51; max-width: 60ch;">{{ t.heroSub }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;">
+        <sc-for list="{{ heroChips }}" as="chip" hint-placeholder-count="4">
+          <span style="border: 1px solid #E0D5C2; background: #FDFBF5; border-radius: 999px; padding: 7px 14px; font-size: 13px; color: #2A211A;">{{ chip }}</span>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; align-items: center;">
+        <a href="mailto:brunismannn@alunos.utfpr.edu.br" style="background: #2A211A; color: #F6F1E7; text-decoration: none; padding: 12px 22px; border-radius: 2px; font-weight: 700; font-size: 15px;" style-hover="background: #A9563A; color: #F6F1E7;">{{ t.heroCta }}</a>
+        <a href="https://github.com/NicoDemosaS" target="_blank" rel="noopener" style="font-size: 15px;">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicolas-gabriel-brunismann-a888b3255/" target="_blank" rel="noopener" style="font-size: 15px;">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center; color: #C9A96E; font-size: 12px; letter-spacing: 14px; padding: 8px 0;">◆◇◆</div>
+
+  <section id="sobre" style="padding: 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+      <div>
+        <div style="display: flex; align-items: baseline; gap: 14px;">
+          <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">01</span>
+          <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.aboutTitle }}</h2>
+        </div>
+        <p style="font-size: 16px; line-height: 1.7; color: #2A211A; margin-top: 22px;">{{ t.aboutP1 }}</p>
+        <p style="font-size: 16px; line-height: 1.7; color: #6E5F51; margin-top: 16px;">{{ t.aboutP2 }}</p>
+      </div>
+      <div style="align-self: center; background: #FDFBF5; border: 1px solid #E0D5C2; padding: 28px; position: relative;">
+        <div style="position: absolute; top: -1px; left: -1px; right: -1px; height: 4px; background: repeating-linear-gradient(90deg, #C9A96E 0 10px, transparent 10px 20px);"></div>
+        <p style="margin: 0; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9563A;">{{ t.factsTitle }}</p>
+        <sc-for list="{{ facts }}" as="f" hint-placeholder-count="5">
+          <div style="display: flex; gap: 12px; align-items: baseline; margin-top: 14px;">
+            <span style="color: #C9A96E; font-size: 11px;">◆</span>
+            <span style="font-size: 15px; line-height: 1.5;">{{ f }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" style="padding: 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">02</span>
+        <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.expTitle }}</h2>
+      </div>
+      <div style="margin-top: 36px;">
+        <sc-for list="{{ exp }}" as="job" hint-placeholder-count="4">
+          <article style="border-left: 2px solid #E0D5C2; padding: 0 0 44px 28px; position: relative; margin-left: 6px;">
+            <span style="position: absolute; left: -8px; top: 6px; width: 12px; height: 12px; background: #C9A96E; transform: rotate(45deg); display: block;"></span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline;">
+              <h3 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: 22px;">{{ job.org }}</h3>
+              <span style="font-size: 15px; color: #A9563A; font-weight: 700;">{{ job.role }}</span>
+              <span style="font-size: 13px; color: #6E5F51; letter-spacing: 0.06em;">{{ job.period }}</span>
+            </div>
+            <ul style="margin: 14px 0 0 0; padding: 0 0 0 18px; display: grid; gap: 8px;">
+              <sc-for list="{{ job.bullets }}" as="b" hint-placeholder-count="3">
+                <li style="font-size: 15px; line-height: 1.6; color: #2A211A;">{{ b }}</li>
+              </sc-for>
+            </ul>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" style="padding: 64px 24px; background: #EFE7D8; border-top: 1px solid #E0D5C2; border-bottom: 1px solid #E0D5C2;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">03</span>
+        <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.projTitle }}</h2>
+      </div>
+      <p style="margin: 14px 0 0 0; color: #6E5F51; font-size: 15px; max-width: 60ch;">{{ t.projSub }}</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 36px;">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+          <article style="{{ p.cardStyle }}">
+            <div style="display: flex; align-items: baseline; gap: 10px; justify-content: space-between; flex-wrap: wrap;">
+              <h3 style="{{ p.nameStyle }}">{{ p.name }}</h3>
+              <span style="{{ p.statusStyle }}">{{ p.status }}</span>
+            </div>
+            <p style="{{ p.descStyle }}">{{ p.desc }}</p>
+            <p style="{{ p.stackStyle }}">{{ p.stack }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguranca" style="padding: 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">04</span>
+        <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.secTitle }}</h2>
+      </div>
+      <p style="margin: 14px 0 0 0; color: #6E5F51; font-size: 15px; line-height: 1.6; max-width: 68ch;">{{ t.secSub }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; align-items: center;">
+        <span style="border: 1px solid #E0D5C2; background: #FDFBF5; padding: 6px 12px; font-size: 12px; letter-spacing: 0.06em; color: #2A211A;">{{ t.secStat1 }}</span>
+        <span style="border: 1px solid #E0D5C2; background: #FDFBF5; padding: 6px 12px; font-size: 12px; letter-spacing: 0.06em; color: #2A211A;">{{ t.secStat2 }}</span>
+        <span style="border: 1px solid #E0D5C2; background: #FDFBF5; padding: 6px 12px; font-size: 12px; letter-spacing: 0.06em; color: #2A211A;">{{ t.secStat3 }}</span>
+      </div>
+      <div style="display: grid; gap: 14px; margin-top: 32px;">
+        <sc-for list="{{ findings }}" as="v" hint-placeholder-count="6">
+          <article style="background: #FDFBF5; border: 1px solid #E0D5C2; padding: 22px 24px; display: grid; gap: 12px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline;">
+              <span style="font-family: 'Gloock', serif; font-size: 15px; color: #C9A96E; min-width: 34px;">{{ v.num }}</span>
+              <h3 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: 20px; flex: 1; min-width: 240px;">{{ v.title }}</h3>
+              <span style="{{ v.sevStyle }}">{{ v.sev }}</span>
+            </div>
+            <p style="margin: 0; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #A9563A; font-weight: 700;">{{ v.cat }}</p>
+            <p style="margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #6E5F51; background: #EFE7D8; border-left: 2px solid #C9A96E; padding: 8px 12px; overflow-wrap: anywhere;">{{ v.endpoint }}</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #2A211A; max-width: 82ch;">{{ v.desc }}</p>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6E5F51; max-width: 82ch;"><span style="color: #A9563A; font-weight: 700;">{{ t.secFixLabel }}</span> {{ v.fix }}</p>
+          </article>
+        </sc-for>
+      </div>
+      <p style="margin: 22px 0 0 0; font-size: 13px; line-height: 1.6; color: #6E5F51; font-style: italic; max-width: 74ch;">{{ t.secNote }}</p>
+    </div>
+  </section>
+
+  <section id="conquistas" style="padding: 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">05</span>
+        <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">{{ t.achTitle }}</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 36px;">
+        <div>
+          <p style="margin: 0 0 16px 0; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9563A;">{{ t.compTitle }}</p>
+          <sc-for list="{{ comps }}" as="c" hint-placeholder-count="3">
+            <div style="border: 1px solid #E0D5C2; background: #FDFBF5; padding: 18px 20px; margin-bottom: 12px; display: flex; gap: 16px; align-items: baseline;">
+              <span style="font-family: 'Gloock', serif; font-size: 26px; color: #C9A96E; min-width: 44px;">{{ c.place }}</span>
+              <div>
+                <p style="margin: 0; font-weight: 700; font-size: 15px;">{{ c.name }}</p>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #6E5F51; line-height: 1.5;">{{ c.detail }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div>
+          <p style="margin: 0 0 16px 0; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9563A;">{{ t.courseTitle }}</p>
+          <sc-for list="{{ courses }}" as="c" hint-placeholder-count="5">
+            <div style="display: flex; gap: 12px; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #E0D5C2; padding: 12px 2px;">
+              <span style="font-size: 15px; line-height: 1.5;">{{ c.name }}</span>
+              <span style="{{ c.badgeStyle }}">{{ c.status }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="padding: 64px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <span style="font-family: 'Gloock', serif; color: #C9A96E; font-size: 18px;">06</span>
+        <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 42px);">Skills</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 36px;">
+        <sc-for list="{{ skillGroups }}" as="g" hint-placeholder-count="6">
+          <div>
+            <p style="margin: 0 0 12px 0; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9563A;">{{ g.name }}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <sc-for list="{{ g.items }}" as="s" hint-placeholder-count="5">
+                <span style="border: 1px solid #E0D5C2; background: #FDFBF5; padding: 6px 12px; font-size: 13px; border-radius: 2px;">{{ s }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="padding: 88px 24px; text-align: center;">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div style="color: #C9A96E; font-size: 12px; letter-spacing: 14px; margin-bottom: 24px;">◆◇◆</div>
+      <h2 style="margin: 0; font-family: 'Gloock', serif; font-weight: 400; font-size: clamp(32px, 5.5vw, 52px); text-wrap: balance;">{{ t.contactTitle }}</h2>
+      <p style="margin: 18px auto 0 auto; color: #6E5F51; font-size: 16px; line-height: 1.6; max-width: 44ch;">{{ t.contactSub }}</p>
+      <div style="display: flex; justify-content: center; margin-top: 32px;">
+        <a href="mailto:brunismannn@alunos.utfpr.edu.br" style="background: #A9563A; color: #F6F1E7; text-decoration: none; padding: 14px 28px; border-radius: 2px; font-weight: 700; font-size: 16px;" style-hover="background: #2A211A; color: #F6F1E7;">brunismannn@alunos.utfpr.edu.br</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #2A211A; color: #F6F1E7; padding: 36px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between;">
+      <p style="margin: 0; font-family: 'Gloock', serif; font-size: 17px;">Nicolas Gabriel Brunismann <span style="color: #C9A96E;">◆</span> <span style="font-family: 'Karla', sans-serif; font-size: 13px; color: #B7A891;">{{ t.footerNote }}</span></p>
+      <div style="display: flex; gap: 20px; font-size: 14px;">
+        <a href="https://github.com/NicoDemosaS" target="_blank" rel="noopener" style="color: #C9A96E;">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicolas-gabriel-brunismann-a888b3255/" target="_blank" rel="noopener" style="color: #C9A96E;">LinkedIn</a>
+        <a href="mailto:brunismannn@alunos.utfpr.edu.br" style="color: #C9A96E;">E-mail</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pt&quot;,&quot;en&quot;],&quot;default&quot;:&quot;pt&quot;,&quot;tsType&quot;:&quot;'pt'|'en'&quot;,&quot;section&quot;:&quot;Idioma&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+
+  data(lang) {
+    const pt = lang === 'pt';
+    const badge = (bg, fg) => ({ fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 10px', borderRadius: '999px', background: bg, color: fg, whiteSpace: 'nowrap' });
+    const card = (dark) => ({ background: dark ? '#0A381D' : '#FDFBF5', border: dark ? '1px solid #0A381D' : '1px solid #E0D5C2', padding: '24px', display: 'flex', flexDirection: 'column' });
+    const name = (dark) => ({ margin: 0, fontFamily: "'Gloock', serif", fontWeight: 400, fontSize: '21px', color: dark ? '#EAF3EC' : '#2A211A' });
+    const desc = (dark) => ({ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.6, color: dark ? '#C8DCCC' : '#6E5F51', flex: 1 });
+    const stack = (dark) => ({ margin: '16px 0 0 0', fontSize: '12px', letterSpacing: '0.05em', color: dark ? '#5F9E6F' : '#A9563A', fontWeight: 700 });
+    const stProd = badge('#5F9E6F', '#0A381D');
+    const stDev = badge('#C9A96E', '#2A211A');
+    const stBuild = badge('#E0D5C2', '#6E5F51');
+    const T = {
+      navAbout: pt ? 'Sobre' : 'About', navExp: pt ? 'Experiência' : 'Experience', navProjects: pt ? 'Projetos' : 'Projects', navSecurity: pt ? 'Segurança' : 'Security', navAchievements: pt ? 'Conquistas' : 'Achievements', navContact: pt ? 'Contato' : 'Contact',
+      heroLine: pt ? 'Eu construo coisas — e as protejo.' : 'I build things — and I protect them.',
+      heroSub: pt ? 'Estudante de Ciência da Computação na UTFPR Medianeira. Generalista com segurança como fio condutor: desenvolvimento, infraestrutura e projetos que vão da resposta a incidentes a apps em produção.' : 'Computer Science undergraduate at UTFPR Medianeira. A generalist with security as the common thread: development, infrastructure and projects ranging from incident response to apps running in production.',
+      heroCta: pt ? 'Fale comigo' : 'Get in touch',
+      aboutTitle: pt ? 'Sobre' : 'About',
+      aboutP1: pt ? 'Sou estagiário de TI na Frimesa (Service Desk N1), bolsista de desenvolvimento tecnológico na UTFPR/Inovagrad e fundador do ARAPUCA — o primeiro grupo de estudos em cibersegurança ofensiva e defensiva da UTFPR Medianeira, registrado como projeto de extensão. Bacharelado em Ciência da Computação com conclusão prevista para outubro de 2028. Inglês avançado.' : 'I am an IT intern at Frimesa (Service Desk N1), a technology development scholarship holder at UTFPR/Inovagrad, and the founder of ARAPUCA — the first offensive and defensive cybersecurity study group at UTFPR Medianeira, registered as an extension project. B.Sc. in Computer Science expected in October 2028. Advanced English.',
+      aboutP2: pt ? 'Fora do terminal: filosofia, literatura, piano, jiu-jitsu e uma impressora 3D que vive ocupada. Isso tudo acaba aparecendo no jeito como eu construo — com curiosidade e à mão.' : 'Away from the terminal: philosophy, literature, piano, jiu-jitsu, and a 3D printer that is always busy. All of that shows up in how I build — with curiosity, by hand.',
+      factsTitle: pt ? 'Agora' : 'Currently',
+      expTitle: pt ? 'Experiência' : 'Experience',
+      projTitle: pt ? 'Projetos' : 'Projects',
+      projSub: pt ? 'Status marcado com honestidade: o que está em produção está em produção; o que está em andamento, também.' : 'Statuses are honest: what is in production is in production; what is in progress is marked as such.',
+      secTitle: pt ? 'Vulnerabilidades encontradas' : 'Vulnerabilities found',
+      secSub: pt ? 'Pesquisa de segurança conduzida na ClassHero (classhero.md.utfpr.edu.br), plataforma acadêmica da UTFPR — testes autorizados, com relatório técnico, CVSS 3.1 e recomendação de correção para cada achado, reportados de forma responsável à equipe responsável.' : 'Security research on ClassHero (classhero.md.utfpr.edu.br), a UTFPR academic platform — authorized testing, with a technical report, CVSS 3.1 scoring and remediation guidance for every finding, all responsibly disclosed to the owning team.',
+      secStat1: pt ? '7 achados reportados' : '7 findings reported',
+      secStat2: pt ? 'CVSS 4.6 — 6.5 (médio)' : 'CVSS 4.6 — 6.5 (medium)',
+      secStat3: pt ? 'Divulgação responsável' : 'Responsible disclosure',
+      secFixLabel: pt ? 'Correção recomendada:' : 'Recommended fix:',
+      secNote: pt ? 'Todos os testes foram feitos com autorização, em contas próprias ou com dados mínimos necessários à prova de conceito. Nenhum dado de terceiros foi retido ou divulgado.' : 'All testing was authorized and performed on my own accounts or with the minimum data required for a proof of concept. No third-party data was retained or disclosed.',
+      achTitle: pt ? 'Conquistas & formação' : 'Achievements & training',
+      compTitle: pt ? 'Competições & eventos' : 'Competitions & events',
+      courseTitle: pt ? 'Formação complementar' : 'Complementary training',
+      contactTitle: pt ? 'Vamos conversar?' : 'Let’s talk',
+      contactSub: pt ? 'Aberto a oportunidades em segurança, desenvolvimento e infraestrutura — e a boas conversas sobre qualquer uma delas.' : 'Open to opportunities in security, development and infrastructure — and to good conversations about any of them.',
+      footerNote: pt ? 'Feito à mão. Sem template.' : 'Handmade. No template.',
+    };
+    const heroChips = pt
+      ? ['Segurança', 'Desenvolvimento', 'Infraestrutura', 'Fundador do ARAPUCA']
+      : ['Security', 'Development', 'Infrastructure', 'Founder of ARAPUCA'];
+    const facts = pt ? [
+      'BCC — UTFPR Medianeira · conclusão prevista out/2028',
+      'Estagiário de TI — Frimesa (Service Desk N1)',
+      'Bolsista de desenvolvimento tecnológico — UTFPR/Inovagrad',
+      'Fundador do ARAPUCA (projeto de extensão)',
+      'Inglês avançado',
+    ] : [
+      'B.Sc. CS — UTFPR Medianeira · expected Oct 2028',
+      'IT Intern — Frimesa (Service Desk N1)',
+      'Tech development scholarship — UTFPR/Inovagrad',
+      'Founder of ARAPUCA (extension project)',
+      'Advanced English',
+    ];
+    const exp = pt ? [
+      { org: 'Frimesa', role: 'Estagiário de TI · Service Desk N1', period: 'jan/2026 — atual', bullets: [
+        'Atendimento N1: registro, triagem e escalonamento de chamados em ferramentas ITSM.',
+        'Troubleshooting de estações Windows e redes (TCP/IP, DNS, DHCP); reset e desbloqueio de credenciais em Active Directory.',
+        'Apoiei a resposta a um incidente real de phishing/malware: endpoint isolado pelo Trend Micro Apex One, análise do dispositivo, rastreamento do vetor (e-mail de fornecedor terceiro comprometido) e apoio no relatório técnico.',
+      ]},
+      { org: 'UTFPR / Inovagrad', role: 'Bolsista de Desenvolvimento Tecnológico', period: 'mai/2026 — atual', bullets: [
+        'Centralização e análise de logs com Grafana e Grafana Loki.',
+        'DNS/Cloudflare e apoio na infraestrutura de observabilidade.',
+      ]},
+      { org: 'ADA — Empresa Júnior de TI da UTFPR', role: 'Desenvolvedor', period: '', bullets: [
+        'Automação de atendimento via WhatsApp com Evolution API e n8n; projetos web com APIs REST, bancos relacionais/SQL e Git/GitHub.',
+      ]},
+      { org: 'Prefeitura de Medianeira — Secretaria da Saúde (CPD)', role: 'Estagiário de TI', period: 'out — dez/2025', bullets: [
+        'Suporte remoto e presencial, inventário de ativos e manutenção preventiva.',
+      ]},
+    ] : [
+      { org: 'Frimesa', role: 'IT Intern · Service Desk N1', period: 'Jan 2026 — present', bullets: [
+        'Tier-1 support: ticket logging, triage and escalation in ITSM tools.',
+        'Windows workstation and network troubleshooting (TCP/IP, DNS, DHCP); credential resets/unlocks in Active Directory.',
+        'Supported the response to a real phishing/malware incident: endpoint isolated by Trend Micro Apex One, device analysis, vector tracing (compromised third-party vendor email) and support on the technical report.',
+      ]},
+      { org: 'UTFPR / Inovagrad', role: 'Technology Development Scholarship', period: 'May 2026 — present', bullets: [
+        'Log centralization and analysis with Grafana and Grafana Loki.',
+        'DNS/Cloudflare and support on the observability infrastructure.',
+      ]},
+      { org: 'ADA — UTFPR Junior IT Enterprise', role: 'Developer', period: '', bullets: [
+        'WhatsApp support automation with Evolution API and n8n; web projects with REST APIs, relational databases/SQL and Git/GitHub.',
+      ]},
+      { org: 'Medianeira City Hall — Health Department (CPD)', role: 'IT Intern', period: 'Oct — Dec 2025', bullets: [
+        'Remote and on-site support, asset inventory and preventive maintenance.',
+      ]},
+    ];
+    const P = (dark, status, statusStyle, nm, ds, st) => ({ cardStyle: card(dark), nameStyle: name(dark), descStyle: desc(dark), stackStyle: stack(dark), statusStyle, name: nm, status, desc: ds, stack: st });
+    const projects = [
+      P(true, pt ? 'projeto de extensão' : 'extension project', badge('#5F9E6F', '#0A381D'), 'ARAPUCA + Plataforma de CTF',
+        pt ? 'Fundei e estruturei o grupo de estudos em cibersegurança da UTFPR Medianeira. Construí e mantenho em produção a infraestrutura de CTF do processo seletivo, com detecção de força bruta via logs do Nginx e regras customizadas de Fail2ban. Palestra sobre phishing e workshop na Feira de Profissões.' : 'Founded and structured the cybersecurity study group at UTFPR Medianeira. Built and maintain in production the CTF infrastructure for the selection process, with brute-force detection via Nginx logs and custom Fail2ban rules. Phishing awareness talk and a workshop at the Careers Fair.',
+        'Docker · Nginx · Flask · PostgreSQL · Fail2ban · VPS Linux (DigitalOcean)'),
+      P(false, pt ? 'concluído' : 'completed', stProd, pt ? 'Análise de segurança — ClassHero (UTFPR)' : 'Security analysis — ClassHero (UTFPR)',
+        pt ? 'Sete vulnerabilidades encontradas e reportadas na plataforma acadêmica da UTFPR: IDOR/BOLA, exposição de PII, falha de lógica de negócio, bypass de progressão, armazenamento inseguro de token e HTML injection. Cada achado com PoC, CVSS 3.1 e recomendação de correção — detalhes na seção Segurança.' : 'Seven vulnerabilities found and reported in UTFPR’s academic platform: IDOR/BOLA, PII exposure, a business logic flaw, progression bypass, insecure token storage and HTML injection. Each finding with a PoC, CVSS 3.1 score and remediation guidance — details in the Security section.',
+        pt ? 'Burp Suite · CVSS 3.1 · IDOR · relatos técnicos' : 'Burp Suite · CVSS 3.1 · IDOR · technical write-ups'),
+      P(false, pt ? 'concluído' : 'completed', stProd, 'Medit',
+        pt ? 'Site de uma comunidade de meditação: divulga e organiza a agenda de encontros de meditação, eventos e cerimônias de consagração de ayahuasca. Reúne as páginas de conteúdo sobre a prática e o propósito do grupo com o fluxo de inscrição nos encontros — data, vaga e confirmação do participante — para que a organização pare de acontecer solta em conversas de WhatsApp.' : 'Website for a meditation community: it promotes and organizes the calendar of meditation gatherings, events and ayahuasca ceremonies. It brings together the content pages about the practice and the group’s purpose with the sign-up flow for each gathering — date, seat and participant confirmation — so scheduling no longer lives scattered across WhatsApp threads.',
+        pt ? 'Flask · banco relacional · deploy em VPS Linux' : 'Flask · relational database · Linux VPS deploy'),
+      P(false, pt ? 'em desenvolvimento' : 'in development', stDev, pt ? 'Rastreador de localização — ESP8266 + Django' : 'Location tracker — ESP8266 + Django',
+        pt ? 'Rastreador que lê coordenadas de um módulo NEO-6M GPS no ESP8266, conecta ao Wi-Fi e envia os pontos por HTTP POST para um servidor Django, que processa e persiste em SQLite. Próximos passos: API de mapas para plotar o trajeto, migração para PostgreSQL e acesso remoto atrás de VPN com domínio próprio.' : 'Tracker that reads coordinates from a NEO-6M GPS module on the ESP8266, joins Wi-Fi and posts the points over HTTP to a Django server, which processes and persists them in SQLite. Next: a maps API to plot the route, migration to PostgreSQL, and remote access behind a VPN with its own domain.',
+        pt ? 'ESP8266 · C++ (Arduino) · NEO-6M GPS · HTTP POST · Django 5.1 · SQLite' : 'ESP8266 · C++ (Arduino) · NEO-6M GPS · HTTP POST · Django 5.1 · SQLite'),
+      P(false, pt ? 'em montagem' : 'being built', stBuild, pt ? 'Irrigação automática com ESP32' : 'Automatic irrigation with ESP32',
+        pt ? 'Sistema de rega automática com ESP32, bomba d’água e peças impressas em 3D. Ideia de pipeline MQTT → Grafana.' : 'Automatic watering system with ESP32, a water pump and 3D-printed parts. Planned MQTT → Grafana pipeline.',
+        pt ? 'ESP32 · impressão 3D · MQTT (planejado)' : 'ESP32 · 3D printing · MQTT (planned)'),
+    ];
+    const comps = pt ? [
+      { place: '9º', name: 'ParqueTec CTF 2025', detail: 'Forense digital, web hacking, OSINT, buffer overflow — 470 pontos.' },
+      { place: '10º', name: 'Alquymia CTF 2025', detail: 'Competição de segurança ofensiva.' },
+      { place: '◆', name: 'SBSeg 2025 · Latinoware 2024', detail: 'Participação.' },
+    ] : [
+      { place: '9th', name: 'ParqueTec CTF 2025', detail: 'Digital forensics, web hacking, OSINT, buffer overflow — 470 points.' },
+      { place: '10th', name: 'Alquymia CTF 2025', detail: 'Offensive security competition.' },
+      { place: '◆', name: 'SBSeg 2025 · Latinoware 2024', detail: 'Attendee.' },
+    ];
+    const done = badge('#5F9E6F', '#0A381D');
+    const going = badge('#EFE7D8', '#A9563A');
+    const courses = [
+      { name: pt ? 'Hackers do Bem — Nível Iniciante (RNP/SENAI-SP)' : 'Hackers do Bem — Beginner level (RNP/SENAI-SP)', status: pt ? 'concluído' : 'completed', badgeStyle: done },
+      { name: 'CRTA — CyberWarFare Labs', status: pt ? 'em andamento' : 'in progress', badgeStyle: going },
+      { name: 'TryHackMe — Junior Penetration Tester', status: pt ? 'em andamento' : 'in progress', badgeStyle: going },
+      { name: 'PortSwigger Web Security Academy', status: pt ? 'em andamento' : 'in progress', badgeStyle: going },
+      { name: pt ? 'Hack The Box Academy — fundamentos' : 'Hack The Box Academy — fundamentals', status: pt ? 'em andamento' : 'in progress', badgeStyle: going },
+    ];
+    const skillGroups = [
+      { name: pt ? 'Segurança' : 'Security', items: ['Nmap', 'Wireshark', 'Burp Suite', 'Fail2ban', 'EDR (Trend Micro Apex One)', pt ? 'análise de logs' : 'log analysis'] },
+      { name: 'Infra', items: ['Linux CLI', 'Windows', 'Active Directory', 'Docker', 'Nginx', 'Cloudflare', 'VPS', 'TCP/IP', 'DNS'] },
+      { name: pt ? 'Monitoramento' : 'Monitoring', items: ['Grafana', 'Grafana Loki', 'Zabbix (homelab)'] },
+      { name: 'Dev', items: ['Python (Flask)', 'Go (code review)', 'Shell Script', 'APIs REST', pt ? 'Flutter/Dart (estudo)' : 'Flutter/Dart (learning)', 'Git/GitHub'] },
+      { name: pt ? 'Dados' : 'Data', items: ['PostgreSQL', 'MySQL', 'SQLite'] },
+      { name: pt ? 'Automação' : 'Automation', items: ['n8n', 'Evolution API'] },
+    ];
+    const sevHigh = badge('#A9563A', '#F6F1E7');
+    const sevMed = badge('#C9A96E', '#2A211A');
+    const F = (num, sev, sevStyle, cat, endpoint, title, desc, fix) => ({ num, sev, sevStyle, cat, endpoint, title, desc, fix });
+    const findings = pt ? [
+      F('01', 'CVSS 6.5 · médio', sevMed, 'A01:2021 — Broken Access Control · IDOR', 'PATCH /api/users/update-info', 'IDOR na alteração de dados de usuário',
+        'O backend confiava no campo email enviado pelo cliente e só verificava se havia sessão válida — nunca se o solicitante era o dono da conta. Trocando o e-mail no JSON, qualquer aluno autenticado alterava o nome de qualquer outro usuário e recebia 200 OK.',
+        'Derivar a identidade do token/sessão, ignorar o e-mail vindo do cliente e usar identificadores internos (user_id) em vez de valores manipuláveis.'),
+      F('02', 'CVSS 6.5 · médio', sevMed, 'A01:2021 — Information Disclosure', 'GET /api/xp-progress/ranking?discipline_id=…', 'Exposição de PII de todos os estudantes',
+        'O endpoint que monta o ranking de XP devolvia nome, e-mail institucional e avatar de todos os alunos da disciplina para qualquer usuário autenticado — base pronta para phishing direcionado e coleta massiva de perfis.',
+        'Restringir o campo de retorno ao mínimo necessário (nome de exibição/apelido), remover e-mails da resposta e aplicar controle de permissão por papel.'),
+      F('03', 'CVSS 6.5 · médio', sevMed, 'A01:2021 — IDOR / BOLA', 'GET /api/quizzes/attempts/by-student/{email}', 'Desempenho acadêmico de terceiros exposto',
+        'Alterando o e-mail na rota, era possível ler notas, número de tentativas, melhor pontuação e horários de conclusão de qualquer outro aluno — quebra de privacidade acadêmica sem nenhuma barreira de autorização.',
+        'Comparar o e-mail da rota com a identidade do token e negar com 403 quando não houver relação (ou papel de professor/admin).'),
+      F('04', 'severidade média/alta', sevHigh, 'IDOR / Insecure Parameter Handling', 'POST /api/games/word-search/submit', 'Bypass de progressão via material_id arbitrário',
+        'O game_id era gerado isoladamente do material. No submit, o servidor aceitava cegamente o material_id do cliente, sem checar se a missão estava liberada nem se o jogo pertencia àquele material — permitindo concluir conteúdo bloqueado e ganhar XP indevido.',
+        'Vincular game_id ↔ material_id na criação, validar o status unlocked do usuário no submit e rejeitar requisições inconsistentes.'),
+      F('05', 'CVSS 5.4 · médio', sevMed, 'Business Logic Flaw + Broken Access Control', 'POST /api/rewards/badge', 'Auto-atribuição e duplicação de badges',
+        'Reenviando exatamente a mesma requisição, sem concluir nenhuma missão nova, o servidor devolvia 201 Created e concedia badges repetidos. Não havia validação de elegibilidade, de duplicidade nem de quem pode atribuir a quem — ranking e gamificação manipuláveis.',
+        'Mover a regra de negócio para o backend: concessão automática ao concluir a missão, um badge por missão, rate limiting e log de auditoria.'),
+      F('06', 'CVSS 4.6 · médio', sevMed, 'A05:2021 — Security Misconfiguration', 'localStorage · JWT / token de sessão', 'Armazenamento inseguro de token no localStorage',
+        'JWTs e tokens de sessão eram guardados no localStorage, totalmente legível por JavaScript. Qualquer XSS na aplicação viraria roubo de sessão e account takeover direto.',
+        'Migrar para cookies HttpOnly + Secure + SameSite=Strict e reforçar sanitização/escaping no frontend para reduzir a superfície de XSS.'),
+      F('07', 'médio', sevMed, 'HTML Injection', pt ? 'Template de e-mail SMTP' : 'SMTP email template', 'HTML injection no fluxo de e-mail',
+        'Input do usuário era sanitizado na renderização web, mas chegava cru ao template de e-mail SMTP. Isso permitia injetar HTML em mensagens enviadas por um domínio remetente confiável — vetor forte de phishing e spoofing.',
+        'Escapar a entrada também na camada de e-mail e tratar todo template de saída como contexto que exige sanitização própria.'),
+    ] : [
+      F('01', 'CVSS 6.5 · medium', sevMed, 'A01:2021 — Broken Access Control · IDOR', 'PATCH /api/users/update-info', 'IDOR in the user info update endpoint',
+        'The backend trusted the client-supplied email field and only checked that a session existed — never that the caller owned the account. Swapping the email in the JSON let any authenticated student rename any other user, returning 200 OK.',
+        'Derive identity from the token/session, ignore the client-supplied email, and use internal identifiers (user_id) instead of user-controlled values.'),
+      F('02', 'CVSS 6.5 · medium', sevMed, 'A01:2021 — Information Disclosure', 'GET /api/xp-progress/ranking?discipline_id=…', 'PII of every student exposed',
+        'The XP ranking endpoint returned the name, institutional email and avatar of every student in the course to any authenticated user — a ready-made list for targeted phishing and mass profile harvesting.',
+        'Return only what the ranking needs (display name), drop emails from the payload, and enforce role-based access control.'),
+      F('03', 'CVSS 6.5 · medium', sevMed, 'A01:2021 — IDOR / BOLA', 'GET /api/quizzes/attempts/by-student/{email}', 'Other students’ academic performance readable',
+        'Changing the email in the route exposed grades, attempt counts, best scores and completion times for any other student — an academic privacy breach with no authorization barrier at all.',
+        'Compare the route email against the token identity and return 403 unless they match (or the caller is a teacher/admin).'),
+      F('04', 'medium/high severity', sevHigh, 'IDOR / Insecure Parameter Handling', 'POST /api/games/word-search/submit', 'Progression bypass via arbitrary material_id',
+        'The game_id was generated independently of the material. On submit, the server blindly accepted the client’s material_id without checking whether the mission was unlocked or whether the game belonged to it — letting users complete locked content and earn XP.',
+        'Bind game_id ↔ material_id at creation, validate the user’s unlocked status on submit, and reject inconsistent requests.'),
+      F('05', 'CVSS 5.4 · medium', sevMed, 'Business Logic Flaw + Broken Access Control', 'POST /api/rewards/badge', 'Self-granted and duplicated badges',
+        'Replaying the exact same request, with no new mission completed, returned 201 Created and granted duplicate badges. No eligibility, duplication or authorization checks existed — the ranking and the whole gamification layer were manipulable.',
+        'Move the business rule server-side: grant automatically on mission completion, one badge per mission, plus rate limiting and audit logging.'),
+      F('06', 'CVSS 4.6 · medium', sevMed, 'A05:2021 — Security Misconfiguration', 'localStorage · JWT / session token', 'Insecure token storage in localStorage',
+        'JWTs and session tokens were kept in localStorage, fully readable by JavaScript. Any XSS in the app would escalate straight to session hijacking and account takeover.',
+        'Move to HttpOnly + Secure + SameSite=Strict cookies and tighten frontend sanitization/escaping to shrink the XSS surface.'),
+      F('07', 'medium', sevMed, 'HTML Injection', 'SMTP email template', 'HTML injection in the email flow',
+        'User input was sanitized for web rendering but reached the SMTP email template raw, allowing HTML to be injected into messages sent from a trusted sender domain — a strong phishing and spoofing vector.',
+        'Escape input in the email layer too, and treat every output template as its own context requiring dedicated sanitization.'),
+    ];
+    return { t: T, heroChips, facts, exp, projects, findings, comps, courses, skillGroups };
+  }
+
+  renderVals() {
+    const lang = this.state.lang ?? (this.props.defaultLang ?? 'pt');
+    const btn = (active) => ({ border: 'none', cursor: 'pointer', padding: '6px 14px', fontFamily: "'Karla', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '0.08em', background: active ? '#C9A96E' : 'transparent', color: active ? '#2A211A' : '#6E5F51' });
+    return Object.assign(this.data(lang), {
+      setPT: () => this.setState({ lang: 'pt' }),
+      setEN: () => this.setState({ lang: 'en' }),
+      ptBtnStyle: btn(lang === 'pt'),
+      enBtnStyle: btn(lang === 'en'),
+    });
+  }
+}
+</script>
+</body>
+</html>

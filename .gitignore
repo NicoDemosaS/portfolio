@@ -1,0 +1,6 @@
+# Relatórios de segurança privados — NÃO publicar (contêm detalhes de falhas reais)
+uploads/
+
+# Arquivos que não fazem parte do site
+.thumbnail
+server.log
